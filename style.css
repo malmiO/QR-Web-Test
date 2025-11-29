@@ -221,6 +221,22 @@
             .screen2 {
                 justify-content: center;
             }
+            
+            .logo-small {
+                width: 100px;
+            }
+            
+            .collection h3 {
+                font-size: 24px;
+            }
+            
+            .product {
+                width: 150px;
+            }
+            
+            .product img {
+                height: 150px;
+            }
 
             .screen3 {
                 flex-direction: column;
