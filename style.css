@@ -1,0 +1,107 @@
+* { margin:0; padding:0; box-sizing:border-box; font-family:sans-serif; }
+  body, html { height: 100%; overflow: hidden; background:#ffffff; color:#000000; }
+
+  .screen {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    opacity:0;
+    pointer-events:none;
+    transition: opacity 1s ease;
+  }
+
+  .active {
+    opacity:1;
+    pointer-events:auto;
+  }
+
+  /* --- Screen 1: Center Logo --- */
+  .screen1 .logo {
+    width:150px;
+    animation: fadeScale 1s forwards;
+  }
+
+  @keyframes fadeScale {
+    0% { opacity:0; transform: scale(0.5); }
+    100% { opacity:1; transform: scale(1); }
+  }
+
+  /* --- Screen 2: Logo top + description + collection --- */
+  .screen2 .logo-small {
+    width:100px;
+    position:absolute;
+    top:20px;
+    animation: logoMorph 1s forwards;
+  }
+
+  @keyframes logoMorph {
+    0% { transform: translateY(200px) scale(1.5); opacity:0; }
+    100% { transform: translateY(0) scale(1); opacity:1; }
+  }
+
+  .screen2 .description {
+    margin-top:140px;
+    font-size:24px;
+    opacity:0;
+    animation: fadeIn 1s forwards 0.8s;
+  }
+
+  .screen2 .collection {
+    display:flex;
+    gap:20px;
+    margin-top:20px;
+    opacity:0;
+    animation: fadeIn 1s forwards 1.6s;
+  }
+
+  .screen2 .collection img {
+    width:100px;
+    height:100px;
+    object-fit:cover;
+    border-radius:10px;
+  }
+
+  @keyframes fadeIn {
+    to { opacity:1; }
+  }
+
+  /* --- Screen 3: Marquee with split vertical --- */
+  .screen3 .marquee-images {
+    display:flex;
+    gap:20px;
+    margin-top:40px;
+  }
+
+  .screen3 .marquee-images img {
+    width:100px;
+    height:100px;
+    object-fit:cover;
+    border-radius:10px;
+    animation: upDown 3s ease-in-out infinite alternate;
+  }
+
+  .screen3 .marquee-images img:nth-child(even) {
+    animation-name: downUp;
+  }
+
+  @keyframes upDown {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-40px); }
+  }
+
+  @keyframes downUp {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(40px); }
+  }
+
+  .screen3 .contact {
+    position:absolute;
+    bottom:40px;
+    text-align:center;
+    opacity:0;
+    animation: fadeIn 1s forwards 1s;
+  }
