@@ -218,6 +218,10 @@
         /* Responsive Design */
         @media (max-width: 768px) {
 
+            .screen2 {
+                justify-content: center;
+            }
+
             .screen3 {
                 flex-direction: column;
                 padding: 20px;
