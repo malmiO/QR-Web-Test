@@ -217,9 +217,10 @@
         
         /* Responsive Design */
         @media (max-width: 768px) {
+
             .screen3 {
                 flex-direction: column;
-                padding-top: 120px;
+                padding: 20px;
             }
             
             .left-image-bar, .right-image-bar {
@@ -234,8 +235,13 @@
                 height: 100px;
             }
             
-            .logo {
-                width: 200px;
+            .contact img {
+                padding-top: 10px;
+                width: 150px;
+            }
+            
+            .social-icons {
+                padding-bottom: 20px;
             }
             
             .description {
